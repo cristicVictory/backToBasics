@@ -74,11 +74,10 @@
 - nginx
 - redis
 
-## 书籍【推荐】
+## 书籍【推 荐】
 - javascript高级编程
 - http权威指南 http图解
 - 高性能mysql
 - 操作系统
 - 算法导论
-
 
