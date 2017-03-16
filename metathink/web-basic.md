@@ -38,6 +38,29 @@ apple.say.apply(banana);    //My color is yellow
 
 `
 ## Clone
+
+function clone(obj){
+  if(Object.prototype.toString.call(obj) === '[object Array]'){
+    return obj.slice().map(item => clone(item))
+  }
+
+  if(Object.prototype.toString.call(obj) === '[object Object]'){
+    let keys = Object.keys(obj)
+    var objProto = Object.getPrototypeOf(obj)
+    var res = objProto === Object.prototype ? {} : Object.create(objProto)
+
+    keys.reduce((curr, key) => {
+      curr[key] = clone(obj[key])
+      return curr
+    }, res)
+    
+    return res
+  }
+
+  return obj
+}
+
+
 ## 科里化
 `
 function add(x,y){
